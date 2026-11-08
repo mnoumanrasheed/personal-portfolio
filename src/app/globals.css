@@ -529,15 +529,13 @@ li {
 
 .logo-mark {
   display: block;
-  flex: 0 0 34px;
-  width: 34px;
-  height: 34px;
-  min-width: 34px;
-  max-width: 34px;
-  border: 1px solid rgba(96, 165, 250, 0.4);
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 5px 14px rgba(59, 130, 246, 0.22);
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  max-width: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(59, 130, 246, 0.22));
 }
 
 .logo-text {
@@ -2738,6 +2736,7 @@ textarea.form-input {
 .profile-photo-container-custom .profile-img-professional {
   object-fit: contain !important;
   object-position: center !important;
+  transform: translateY(6px);
 }
 
 .floating-code-card-custom {
@@ -2766,7 +2765,7 @@ textarea.form-input {
 }
 
 .cyber-frame-custom:hover .profile-img-professional {
-  transform: scale(1);
+  transform: translateY(6px);
 }
 
 /* Waveform visualizer instead of circles */

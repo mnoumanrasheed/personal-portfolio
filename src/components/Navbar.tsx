@@ -76,12 +76,12 @@ export default function Navbar() {
       <div className="nav-container">
         <a href="#hero" className="logo" onClick={(e) => { e.preventDefault(); handleNavClick('hero'); }}>
           <img
-            src="/nomi.png"
+            src="/nomi-transparent.png"
             alt=""
             className="logo-mark"
-            width={34}
-            height={34}
-            style={{ width: 34, height: 34, minWidth: 34, maxWidth: 34 }}
+            width={42}
+            height={42}
+            style={{ width: 42, height: 42, minWidth: 42, maxWidth: 42 }}
           />
           <span className="logo-text">M .Nouman</span>
         </a>

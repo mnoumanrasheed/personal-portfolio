@@ -39,12 +39,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/nomi.png" },
-      { url: "/nomi.png", sizes: "32x32", type: "image/png" },
-      { url: "/nomi.png", sizes: "16x16", type: "image/png" },
+      { url: "/nomi-transparent.png" },
+      { url: "/nomi-transparent.png", sizes: "32x32", type: "image/png" },
+      { url: "/nomi-transparent.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: "/nomi.png", sizes: "180x180", type: "image/png" },
+      { url: "/nomi-transparent.png", sizes: "180x180", type: "image/png" },
     ],
   },
   openGraph: {
@@ -93,7 +93,7 @@ const personSchema = {
       "image": {
         "@type": "ImageObject",
         "@id": "https://mnoumanrasheed.netlify.app/#personImage",
-        "url": "https://mnoumanrasheed.netlify.app/nomi.png",
+        "url": "https://mnoumanrasheed.netlify.app/nomi-transparent.png",
         "caption": "Muhammad Nouman"
       },
       "jobTitle": "Web Developer & ML Enthusiast",
