@@ -1,108 +1,119 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 interface LoaderProps {
   onComplete: () => void;
 }
 
-const BOOT_LOGS = [
-  "npm run start:portfolio",
-  "> nouman-portfolio@3.99.0 start",
-  "> next start",
-  "",
-  "ℹ [system] Initializing Muhammad Nouman’s portfolio...",
-  "✔ [system] V8 / Next.js environment ready.",
-  "ℹ [profile] Academic profile loaded. CGPA: 3.99.",
-  "ℹ [stack] Activating C#/.NET, Python, React, OpenCV & ML...",
-  "ℹ [projects] Preparing featured project showcase...",
-  "✔ [loader] Portfolio ready. Status: EXCELLENT."
-];
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Loader({ onComplete }: LoaderProps) {
-  const [logs, setLogs] = useState<string[]>([]);
-  const [progress, setProgress] = useState(0);
-  const [isDone, setIsDone] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+  const [isReady, setIsReady] = useState(false);
+  const [minimumDisplayComplete, setMinimumDisplayComplete] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const canComplete = isReady && minimumDisplayComplete;
 
   useEffect(() => {
-    let logIndex = 0;
-    const logInterval = setInterval(() => {
-      if (logIndex < BOOT_LOGS.length) {
-        const currentIndex = logIndex;
-        setLogs((prev) => [...prev, BOOT_LOGS[currentIndex]]);
-        logIndex++;
-      } else {
-        clearInterval(logInterval);
-      }
-    }, 150);
+    const markReady = () => setIsReady(true);
 
-    return () => clearInterval(logInterval);
+    if (document.readyState === 'complete') {
+      markReady();
+      return;
+    }
+
+    window.addEventListener('load', markReady, { once: true });
+    return () => window.removeEventListener('load', markReady);
   }, []);
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(progressInterval);
-          setTimeout(() => {
-            setIsDone(true);
-            setTimeout(onComplete, 500); // Allow fadeout animation to finish
-          }, 600);
-          return 100;
-        }
-        // Random increment
-        const increment = Math.floor(Math.random() * 8) + 4;
-        return Math.min(prev + increment, 100);
-      });
-    }, 120);
+    const timer = window.setTimeout(
+      () => setMinimumDisplayComplete(true),
+      shouldReduceMotion ? 0 : 1150
+    );
 
-    return () => clearInterval(progressInterval);
-  }, [onComplete]);
+    return () => window.clearTimeout(timer);
+  }, [shouldReduceMotion]);
 
   return (
-    <AnimatePresence>
-      {!isDone && (
+    <AnimatePresence mode="wait" onExitComplete={onComplete}>
+      {isVisible && (
         <motion.div
           className="loader-wrapper"
+          role="status"
+          aria-live="polite"
+          aria-label="Loading Muhammad Nouman's portfolio"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: shouldReduceMotion ? 0.01 : 0.38, ease: EASE }}
         >
-          <div className="loader-container">
-            <div className="loader-header">
-              <div className="loader-dot red" />
-              <div className="loader-dot yellow" />
-              <div className="loader-dot green" />
-              <span className="loader-title">terminal@nouman-pc:~</span>
-            </div>
+          <div className="loader-content">
+            <motion.p
+              className="loader-monogram"
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0.01 : 0.62, ease: EASE }}
+            >
+              MN.
+            </motion.p>
 
-            <div className="loader-terminal">
-              {logs.map((log, index) => (
-                <div
-                  key={index}
-                  style={{
-                    color: typeof log === 'string' && log.startsWith('✔') ? 'var(--success-color)' : typeof log === 'string' && log.startsWith('↳') ? 'var(--text-muted)' : 'inherit',
-                    fontFamily: 'var(--font-mono)',
-                    marginBottom: '4px'
-                  }}
-                >
-                  {log}
-                </div>
-              ))}
+            <motion.div
+              className="loader-accent-line"
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              transition={{ duration: shouldReduceMotion ? 0.01 : 0.56, delay: shouldReduceMotion ? 0 : 0.18, ease: EASE }}
+            />
 
-              <span className="animate-pulse">_</span>
-            </div>
+            <motion.div
+              className="loader-branding"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    delayChildren: shouldReduceMotion ? 0 : 0.3,
+                    staggerChildren: shouldReduceMotion ? 0 : 0.1
+                  }
+                }
+              }}
+            >
+              <motion.h1
+                variants={{
+                  hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 8 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: shouldReduceMotion ? 0.01 : 0.46, ease: EASE }}
+              >
+                Muhammad Nouman
+              </motion.h1>
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 8 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: shouldReduceMotion ? 0.01 : 0.46, ease: EASE }}
+              >
+                Web Developer &amp; ML Enthusiast
+              </motion.p>
+            </motion.div>
 
-            <div className="loader-progress-bar">
-              <div
+            <div className="loader-progress" aria-hidden="true">
+              <motion.div
                 className="loader-progress-fill"
-                style={{ width: `${progress}%` }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: canComplete ? 1 : 0.86 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0.01 : canComplete ? 0.38 : 1.08,
+                  delay: shouldReduceMotion ? 0 : 0.28,
+                  ease: EASE
+                }}
+                onAnimationComplete={() => {
+                  if (canComplete) setIsVisible(false);
+                }}
               />
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', fontSize: '0.8rem', fontFamily: 'var(--font-mono)' }}>
-              <span>LOADING SYSTEMS...</span>
-              <span>{progress}%</span>
             </div>
           </div>
         </motion.div>

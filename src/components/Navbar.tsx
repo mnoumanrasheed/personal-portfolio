@@ -75,7 +75,15 @@ export default function Navbar() {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <a href="#hero" className="logo" onClick={(e) => { e.preventDefault(); handleNavClick('hero'); }}>
-          NOUMAN<span style={{ color: 'var(--accent-color)' }}>.DEV</span>
+          <img
+            src="/nomi.png"
+            alt=""
+            className="logo-mark"
+            width={34}
+            height={34}
+            style={{ width: 34, height: 34, minWidth: 34, maxWidth: 34 }}
+          />
+          <span className="logo-text">M .Nouman</span>
         </a>
 
         {/* Desktop Navigation */}

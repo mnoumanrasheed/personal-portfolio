@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Loader from '@/components/Loader';
 import CustomCursor from '@/components/CustomCursor';
 import Navbar from '@/components/Navbar';
@@ -21,7 +22,12 @@ export default function Home() {
       <Loader onComplete={() => setIsLoading(false)} />
       
       {!isLoading && (
-        <div className="portfolio-app-root">
+        <motion.div
+          className="portfolio-app-root"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+        >
           <CustomCursor />
           <Navbar />
           <main>
@@ -34,7 +40,7 @@ export default function Home() {
             <Contact />
           </main>
           <Footer />
-        </div>
+        </motion.div>
       )}
     </>
   );

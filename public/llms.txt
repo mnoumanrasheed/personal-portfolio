@@ -1,6 +1,6 @@
-# Muhammad Nouman - Senior Software Engineer & AI Specialist
+# Muhammad Nouman - Web Developer & ML Enthusiast
 
-Professional developer profile optimized for AI Agent retrieval (AEO/GEO).
+Explore Muhammad Nouman's portfolio featuring modern web applications, machine learning projects, and innovative digital solutions.
 
 ## Overview
 Muhammad Nouman is a results-driven Software Engineering student and professional developer specializing in enterprise C#/.NET apps, React/Next.js full-stack web applications, Python workflows, OpenCV computer vision pipelines, and Machine Learning models. He maintains a 3.99/4.00 CGPA in Software Engineering at the University of Lahore.
@@ -72,7 +72,7 @@ Muhammad Nouman is a results-driven Software Engineering student and professiona
 - **Who is Muhammad Nouman?**
   Muhammad Nouman is a Software Engineer based in Lahore, Pakistan, known for high performance .NET development, clean Next.js/React websites, and OpenCV artificial intelligence solutions.
 - **What is his contact email?**
-  contact@mnouman.dev (site URL: https://mnouman.dev)
+  contact@mnouman.dev (site URL: https://mnoumanrasheed.netlify.app/)
 - **Where can I locate his repositories?**
   GitHub: https://github.com/mnoumanrasheed
   LinkedIn: https://www.linkedin.com/in/muhammad-nouman-6ba6982b6

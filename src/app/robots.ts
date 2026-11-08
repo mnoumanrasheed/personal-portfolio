@@ -1,4 +1,6 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
+
+const SITE_URL = 'https://mnoumanrasheed.netlify.app';
 
 export default function robots(): MetadataRoute.Robots {
     return {
@@ -23,6 +25,7 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             }
         ],
-        sitemap: 'https://mnouman.dev/sitemap.xml',
+        host: SITE_URL,
+        sitemap: `${SITE_URL}/sitemap.xml`,
     };
 }

@@ -255,16 +255,7 @@ export default function Hero() {
             </div>
 
             {/* Cinematic Cyber Frame */}
-            <div
-              className="cyber-frame-custom"
-              style={{
-                position: 'relative',
-                width: '290px',
-                height: '290px',
-                borderRadius: '20px',
-                overflow: 'hidden'
-              }}
-            >
+            <div className="cyber-frame-custom">
               <div className="cyber-corner-custom cyber-corner-tl-c" />
               <div className="cyber-corner-custom cyber-corner-tr-c" />
               <div className="cyber-corner-custom cyber-corner-bl-c" />
@@ -272,18 +263,9 @@ export default function Hero() {
               <div className="cyber-scanline-custom" />
 
               {/* Photo container with simple professional frame */}
-              <div
-                className="profile-photo-container-custom"
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '12px',
-                  overflow: 'hidden'
-                }}
-              >
+              <div className="profile-photo-container-custom">
                 <Image
-                  src="/M.Nouman.jpeg"
+                  src="/M.Nouman.png"
                   alt="Muhammad Nouman"
                   fill
                   priority
@@ -291,7 +273,7 @@ export default function Hero() {
                   sizes="(max-width: 768px) 260px, 340px"
                   style={{
                     objectFit: 'cover',
-                    objectPosition: 'center center'
+                    objectPosition: '50% 18%'
                   }}
                 />
                 <div className="profile-img-overlay" />

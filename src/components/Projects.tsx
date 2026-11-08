@@ -1,75 +1,17 @@
 'use client';
 
 import React from 'react';
-import { Eye, Terminal, Globe, Award, Database, Image as ImageIcon } from 'lucide-react';
+import { Eye, Terminal, Globe, Award, Database, Image as ImageIcon, ScanFace } from 'lucide-react';
 import { GithubIcon } from '@/components/Icons';
 import { motion } from 'framer-motion';
 
 const PROJECTS_DATA = [
   {
-    title: "SmartFace Attendance System",
-    desc: "A C# Windows Forms application that automates student attendance using local webcam-based facial detection, face training, and automatic logs.",
-    tech: ["C#", "Windows Forms", "OpenCV (EmguCV)"],
-    github: "https://github.com/mnoumanrasheed/SmartFace-Attendance-System",
-    previewType: "app",
-    icon: <Terminal size={24} />
-  },
-  {
-    title: "EV Consults Agency Portal",
-    desc: "A premium business website for an EV consulting agency, detailing services, scheduling consultations, and interactive client resources.",
-    tech: ["Next.js", "React", "TypeScript", "CSS Modules"],
-    github: "https://github.com/mnoumanrasheed/evconsults-web",
-    liveUrl: "https://evconsults.com/",
-    previewType: "web",
-    icon: <Globe size={24} />
-  },
-  {
-    title: "Al-Rasheed Super Store Landing",
-    desc: "A highly responsive e-commerce storefront landing page featuring dynamic product showcase grids, optimized layout flow, and cart overlays.",
-    tech: ["Next.js", "TypeScript", "Vanilla CSS", "Framer Motion"],
-    github: "https://github.com/mnoumanrasheed/al-rasheed-super-store",
-    liveUrl: "https://al-rasheed-super-store.netlify.app/",
-    previewType: "web",
-    icon: <Globe size={24} />
-  },
-  {
-    title: "Library Management System",
-    desc: "A comprehensive desktop management solution for managing books, tracking student card issuing/returns, stock levels, and generating receipts.",
-    tech: ["C#", ".NET Framework", "Windows Forms", "SQL Server"],
-    github: "https://github.com/mnoumanrasheed/LibraryManagementSystem",
-    previewType: "app",
-    icon: <Database size={24} />
-  },
-  {
-    title: "Employee Payroll System",
-    desc: "A secure C# desktop administrative panel calculating employee hourly salaries, tax bracket deductions, generating payslips, and exporting PDF reports.",
-    tech: ["C#", ".NET Framework", "Windows Forms", "SQL Server"],
-    github: "https://github.com/mnoumanrasheed/EmployeePayrollSystem",
-    previewType: "app",
-    icon: <Database size={24} />
-  },
-  {
-    title: "Image Processing Algorithms",
-    desc: "A Python computer vision workflow practicing batch operations, edge detection operators, filtering matrices, and background subtractors.",
-    tech: ["Python", "OpenCV", "NumPy", "Pillow"],
-    github: "https://github.com/mnoumanrasheed/Image-Processing-fundamentals",
-    previewType: "ml",
-    icon: <ImageIcon size={24} />
-  },
-  {
-    title: "Iris Flower Species Classifier",
-    desc: "A machine learning classification project utilizing Scikit-learn algorithms to inspect flower measurements and predict iris species accurately.",
-    tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-    github: "https://github.com/mnoumanrasheed/Machine-Learning-Projects",
-    previewType: "ml",
-    icon: <Award size={24} />
-  },
-  {
-    title: "Saira E-Commerce Expert",
-    desc: "A professional e-commerce service portfolio designed to showcase digital business expertise, services, and client-focused solutions.",
-    tech: ["Next.js", "React", "TypeScript", "Responsive UI"],
-    github: "https://github.com/mnoumanrasheed/portfolio-website",
-    liveUrl: "https://sairaaashfaq.netlify.app/",
+    title: "Men's Hub | Premium E-Commerce Store",
+    desc: "A production-ready men's fashion catalogue with responsive product discovery, WhatsApp ordering, and a private admin area for products and content.",
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    github: "https://github.com/mnoumanrasheed/mens-hub-store",
+    liveUrl: "https://mens-hub-store.vercel.app/",
     previewType: "web",
     icon: <Globe size={24} />
   },
@@ -92,14 +34,6 @@ const PROJECTS_DATA = [
     icon: <Globe size={24} />
   },
   {
-    title: "NourDoc 2.0 Flutter Application",
-    desc: "A mobile application UI implementation with polished authentication, patient management, consultations, clinical documentation, and navigation flows.",
-    tech: ["Flutter", "Dart", "Modular Architecture"],
-    github: "https://github.com/mnoumanrasheed/nourdoc-2.0-ui",
-    previewType: "app",
-    icon: <Terminal size={24} />
-  },
-  {
     title: "M3 Hive Corporate Website",
     desc: "A modern corporate website showcasing AI solutions, product engineering, automation, data analytics, and digital transformation services.",
     tech: ["React", "TypeScript", "Vite", "GSAP"],
@@ -117,11 +51,29 @@ const PROJECTS_DATA = [
     icon: <Database size={24} />
   },
   {
+    title: "EV Consults Agency Portal",
+    desc: "A premium business website for an EV consulting agency, detailing services, scheduling consultations, and interactive client resources.",
+    tech: ["Next.js", "React", "TypeScript", "CSS Modules"],
+    github: "https://github.com/mnoumanrasheed/evconsults-web",
+    liveUrl: "https://evconsults.com/",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
     title: "LeadHive AI Website",
     desc: "An AI automation platform website for intelligent lead generation, digital automation, engagement tools, and interactive product experiences.",
     tech: ["React", "Vite", "Tailwind CSS"],
     github: "https://github.com/mnoumanrasheed/leadhive-ai-web",
     liveUrl: "https://leadhive-ai-web.vercel.app",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
+    title: "Dr. Ebbad Nazir Portfolio",
+    desc: "A premium personal website with cinematic visual elements, interactive animations, refined typography, and a responsive professional presentation.",
+    tech: ["Next.js", "React", "Three.js", "GSAP"],
+    github: "https://github.com/mnoumanrasheed/dr.ebbad-profile",
+    liveUrl: "https://dr-ebbad-profile.vercel.app",
     previewType: "web",
     icon: <Globe size={24} />
   },
@@ -135,15 +87,6 @@ const PROJECTS_DATA = [
     icon: <Award size={24} />
   },
   {
-    title: "Dr. Ebbad Nazir Portfolio",
-    desc: "A premium personal website with cinematic visual elements, interactive animations, refined typography, and a responsive professional presentation.",
-    tech: ["Next.js", "React", "Three.js", "GSAP"],
-    github: "https://github.com/mnoumanrasheed/dr.ebbad-profile",
-    liveUrl: "https://dr-ebbad-profile.vercel.app",
-    previewType: "web",
-    icon: <Globe size={24} />
-  },
-  {
     title: "Aaqib Alvi Personal Portfolio",
     desc: "A responsive personal portfolio that presents professional experience through modern layouts, clear content structure, and interactive UI components.",
     tech: ["Next.js", "TypeScript", "Framer Motion"],
@@ -151,6 +94,22 @@ const PROJECTS_DATA = [
     liveUrl: "https://portfolio-aaqib-alvi.vercel.app",
     previewType: "web",
     icon: <Globe size={24} />
+  },
+  {
+    title: "NourDoc 2.0 Flutter Application",
+    desc: "A mobile application UI implementation with polished authentication, patient management, consultations, clinical documentation, and navigation flows.",
+    tech: ["Flutter", "Dart", "Modular Architecture"],
+    github: "https://github.com/mnoumanrasheed/nourdoc-2.0-ui",
+    previewType: "app",
+    icon: <Terminal size={24} />
+  },
+  {
+    title: "SmartFace | AI Attendance System",
+    desc: "A desktop attendance system that recognizes students through a webcam, automates attendance tracking, and manages records through an intuitive interface.",
+    tech: ["C#", ".NET Framework", "Windows Forms", "OpenCV / EmguCV", "Face Recognition"],
+    github: "https://github.com/mnoumanrasheed/SmartFace-Attendance-System",
+    previewType: "app",
+    icon: <ScanFace size={24} />
   },
   {
     title: "Machine Learning Projects Collection",
@@ -161,12 +120,12 @@ const PROJECTS_DATA = [
     icon: <Award size={24} />
   },
   {
-    title: "FastAPI CRUD Application",
-    desc: "A structured FastAPI backend demonstrating product-focused REST endpoints, CRUD operations, routing, schemas, models, and configuration modules.",
-    tech: ["Python", "FastAPI", "REST API"],
-    github: "https://github.com/mnoumanrasheed/fastAPI-curd-operation",
-    previewType: "app",
-    icon: <Database size={24} />
+    title: "Image Processing Algorithms",
+    desc: "A Python computer vision workflow practicing batch operations, edge detection operators, filtering matrices, and background subtractors.",
+    tech: ["Python", "OpenCV", "NumPy", "Pillow"],
+    github: "https://github.com/mnoumanrasheed/Image-Processing-fundamentals",
+    previewType: "ml",
+    icon: <ImageIcon size={24} />
   }
 ];
 
@@ -213,17 +172,20 @@ export default function Projects() {
             key={index}
             className="glass-panel project-card"
             variants={{
-              hidden: { opacity: 0, y: 32, scale: 0.97, filter: "blur(8px)" },
-              visible: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+              hidden: { opacity: 0, y: 28, scale: 0.985 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1] }
+              }
             }}
-            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{
-              y: -10,
-              scale: 1.015,
-              boxShadow: "0 24px 48px -18px rgba(59, 130, 246, 0.28)",
-              transition: { type: "spring", stiffness: 360, damping: 24 }
+              y: -7,
+              scale: 1.006,
+              transition: { type: "spring", stiffness: 320, damping: 26, mass: 0.7 }
             }}
-            whileTap={{ scale: 0.99 }}
+            whileTap={{ scale: 0.995, transition: { duration: 0.12 } }}
           >
             <div className="project-icon">
               {project.icon}

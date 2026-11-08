@@ -6,39 +6,31 @@ import DynamicThreeBackground from "@/components/DynamicThreeBackground";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mnouman.dev"),
-  title: "Muhammad Nouman | Senior Software Engineer & AI Specialist",
-  description: "Portfolio of Muhammad Nouman, an expert Software Engineer specializing in C#/.NET, Next.js/React Full-Stack Web Development, Python, and Machine Learning. Discover high-performance, cinematic digital projects.",
+  metadataBase: new URL("https://mnoumanrasheed.netlify.app"),
+  title: {
+    default: "Muhammad Nouman | Web Developer & ML Enthusiast",
+    template: "%s | Muhammad Nouman",
+  },
+  description: "Explore Muhammad Nouman's portfolio featuring modern web applications, machine learning projects, and innovative digital solutions.",
+  applicationName: "Muhammad Nouman Portfolio",
+  category: "technology",
   keywords: [
     "Muhammad Nouman",
-    "Muhammad Nouman Software Engineer",
-    "Muhammad Nouman .NET Developer",
-    "Software Engineer",
-    "C# Developer",
-    ".NET Developer",
-    "API Developer",
-    "Full-Stack Web Developer",
+    "Muhammad Nouman Web Developer",
+    "Muhammad Nouman ML Enthusiast",
+    "Web Developer",
     "React Developer",
-    "Next.js Portfolio",
-    "AI Machine Learning Portfolio",
-    "Python Developer",
-    "OpenCV Expert",
-    "Desktop Application Developer C#",
-    "Lahore Software Engineer"
+    "Next.js Developer",
+    "Modern Web Applications",
+    "Machine Learning Projects",
+    "Digital Solutions",
+    "Portfolio"
   ],
-  authors: [{ name: "Muhammad Nouman", url: "https://mnouman.dev" }],
+  authors: [{ name: "Muhammad Nouman", url: "https://mnoumanrasheed.netlify.app/" }],
   creator: "Muhammad Nouman",
   publisher: "Muhammad Nouman",
   alternates: {
     canonical: "/",
-  },
-  verification: {
-    google: "google-site-verification-placeholder", // To be replaced by user's search console token
-    yandex: "yandex-placeholder",
-    yahoo: "yahoo-placeholder",
-    other: {
-      me: ["contact@mnouman.dev", "https://github.com/mnoumanrasheed"],
-    },
   },
   formatDetection: {
     email: false,
@@ -58,22 +50,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mnouman.dev/",
-    title: "Muhammad Nouman | Senior Software Engineer & AI Specialist Portfolio",
-    description: "Explore elite engineering solutions in .NET, Next.js web application development, and AI/Machine Learning models by Muhammad Nouman.",
+    url: "https://mnoumanrasheed.netlify.app/",
+    title: "Muhammad Nouman | Web Developer & ML Enthusiast",
+    description: "Explore Muhammad Nouman's portfolio featuring modern web applications, machine learning projects, and innovative digital solutions.",
     siteName: "Muhammad Nouman Portfolio",
     images: [{
-      url: "/og-image.png",
+      url: "/opengraph-image",
       width: 1200,
       height: 630,
-      alt: "Muhammad Nouman Software Engineering Portfolio Preview",
+      alt: "Muhammad Nouman Web Developer and ML Enthusiast Portfolio Preview",
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Nouman | Software Engineer & AI Innovator",
-    description: "Building production-grade .NET, full-stack React applications, and intelligent OpenCV/ML pipelines.",
-    images: ["/og-image.png"],
+    title: "Muhammad Nouman | Web Developer & ML Enthusiast",
+    description: "Explore Muhammad Nouman's portfolio featuring modern web applications, machine learning projects, and innovative digital solutions.",
+    images: ["/opengraph-image"],
     creator: "@mnoumanrasheed",
   },
   robots: {
@@ -95,17 +87,17 @@ const personSchema = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://mnouman.dev/#person",
+      "@id": "https://mnoumanrasheed.netlify.app/#person",
       "name": "Muhammad Nouman",
-      "url": "https://mnouman.dev/",
+      "url": "https://mnoumanrasheed.netlify.app/",
       "image": {
         "@type": "ImageObject",
-        "@id": "https://mnouman.dev/#personImage",
-        "url": "https://mnouman.dev/nomi.png",
+        "@id": "https://mnoumanrasheed.netlify.app/#personImage",
+        "url": "https://mnoumanrasheed.netlify.app/nomi.png",
         "caption": "Muhammad Nouman"
       },
-      "jobTitle": "Software Engineer",
-      "description": "High-performance software engineer specializing in C#/.NET desktop & enterprise API solutions, Next.js full-stack web applications, OpenCV computer vision, and machine learning models.",
+      "jobTitle": "Web Developer & ML Enthusiast",
+      "description": "Web developer and machine learning enthusiast creating modern web applications, machine learning projects, and innovative digital solutions.",
       "alumniOf": {
         "@type": "EducationalOrganization",
         "name": "University of Lahore",
@@ -129,30 +121,43 @@ const personSchema = {
       ],
       "sameAs": [
         "https://github.com/mnoumanrasheed",
-        "https://www.linkedin.com/in/muhammad-nouman-6ba6982b6",
-        "https://www.kaggle.com/mnoumanrasheed"
+        "https://www.linkedin.com/in/muhammad-nouman-6ba6982b6"
       ]
     },
     {
       "@type": "WebSite",
-      "@id": "https://mnouman.dev/#website",
-      "url": "https://mnouman.dev/",
+      "@id": "https://mnoumanrasheed.netlify.app/#website",
+      "url": "https://mnoumanrasheed.netlify.app/",
       "name": "Muhammad Nouman Portfolio",
-      "description": "Professional engineering portfolio showcasing projects in web development, enterprise .NET systems, and AI integration.",
+      "description": "Explore Muhammad Nouman's portfolio featuring modern web applications, machine learning projects, and innovative digital solutions.",
       "publisher": {
-        "@id": "https://mnouman.dev/#person"
+        "@id": "https://mnoumanrasheed.netlify.app/#person"
       }
     },
     {
+      "@type": "ProfilePage",
+      "@id": "https://mnoumanrasheed.netlify.app/#profile",
+      "url": "https://mnoumanrasheed.netlify.app/",
+      "name": "Muhammad Nouman | Web Developer & ML Enthusiast",
+      "description": "Explore Muhammad Nouman's portfolio featuring modern web applications, machine learning projects, and innovative digital solutions.",
+      "mainEntity": {
+        "@id": "https://mnoumanrasheed.netlify.app/#person"
+      },
+      "isPartOf": {
+        "@id": "https://mnoumanrasheed.netlify.app/#website"
+      },
+      "inLanguage": "en"
+    },
+    {
       "@type": "FAQPage",
-      "@id": "https://mnouman.dev/#faq",
+      "@id": "https://mnoumanrasheed.netlify.app/#faq",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "What are Muhammad Nouman's core technical skills?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Muhammad Nouman specializes in C#/.NET Development, Next.js/React Full-Stack Web Development, Python Developer tools, Machine Learning, and OpenCV Computer Vision models."
+            "text": "Muhammad Nouman focuses on modern web applications, React and Next.js development, machine learning projects, and innovative digital solutions."
           }
         },
         {
@@ -160,7 +165,7 @@ const personSchema = {
           "name": "What industries does Muhammad Nouman specialize in?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "He specializes in Enterprise Software Engineering, Desktop Client Development, Web App Modernization, Custom API integration, and AI-driven automation systems."
+            "text": "His portfolio features modern web development, machine learning projects, and practical digital solutions."
           }
         },
         {
