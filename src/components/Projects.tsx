@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ExternalLink, Eye, Terminal, Globe, Award, Database, Image as ImageIcon } from 'lucide-react';
+import { Eye, Terminal, Globe, Award, Database, Image as ImageIcon } from 'lucide-react';
 import { GithubIcon } from '@/components/Icons';
 import { motion } from 'framer-motion';
 
@@ -10,7 +10,7 @@ const PROJECTS_DATA = [
     title: "SmartFace Attendance System",
     desc: "A C# Windows Forms application that automates student attendance using local webcam-based facial detection, face training, and automatic logs.",
     tech: ["C#", "Windows Forms", "OpenCV (EmguCV)"],
-    github: "https://github.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/SmartFace-Attendance-System",
     previewType: "app",
     icon: <Terminal size={24} />
   },
@@ -18,7 +18,7 @@ const PROJECTS_DATA = [
     title: "EV Consults Agency Portal",
     desc: "A premium business website for an EV consulting agency, detailing services, scheduling consultations, and interactive client resources.",
     tech: ["Next.js", "React", "TypeScript", "CSS Modules"],
-    github: "https://github.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/evconsults-web",
     liveUrl: "https://evconsults.com/",
     previewType: "web",
     icon: <Globe size={24} />
@@ -27,7 +27,7 @@ const PROJECTS_DATA = [
     title: "Al-Rasheed Super Store Landing",
     desc: "A highly responsive e-commerce storefront landing page featuring dynamic product showcase grids, optimized layout flow, and cart overlays.",
     tech: ["Next.js", "TypeScript", "Vanilla CSS", "Framer Motion"],
-    github: "https://github.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/al-rasheed-super-store",
     liveUrl: "https://al-rasheed-super-store.netlify.app/",
     previewType: "web",
     icon: <Globe size={24} />
@@ -36,7 +36,7 @@ const PROJECTS_DATA = [
     title: "Library Management System",
     desc: "A comprehensive desktop management solution for managing books, tracking student card issuing/returns, stock levels, and generating receipts.",
     tech: ["C#", ".NET Framework", "Windows Forms", "SQL Server"],
-    github: "https://github.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/LibraryManagementSystem",
     previewType: "app",
     icon: <Database size={24} />
   },
@@ -44,7 +44,7 @@ const PROJECTS_DATA = [
     title: "Employee Payroll System",
     desc: "A secure C# desktop administrative panel calculating employee hourly salaries, tax bracket deductions, generating payslips, and exporting PDF reports.",
     tech: ["C#", ".NET Framework", "Windows Forms", "SQL Server"],
-    github: "https://github.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/EmployeePayrollSystem",
     previewType: "app",
     icon: <Database size={24} />
   },
@@ -52,8 +52,7 @@ const PROJECTS_DATA = [
     title: "Image Processing Algorithms",
     desc: "A Python computer vision workflow practicing batch operations, edge detection operators, filtering matrices, and background subtractors.",
     tech: ["Python", "OpenCV", "NumPy", "Pillow"],
-    github: "https://github.com/mnoumanrasheed",
-    kaggle: "https://www.kaggle.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/Image-Processing-fundamentals",
     previewType: "ml",
     icon: <ImageIcon size={24} />
   },
@@ -61,8 +60,7 @@ const PROJECTS_DATA = [
     title: "Iris Flower Species Classifier",
     desc: "A machine learning classification project utilizing Scikit-learn algorithms to inspect flower measurements and predict iris species accurately.",
     tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-    github: "https://github.com/mnoumanrasheed",
-    kaggle: "https://www.kaggle.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/Machine-Learning-Projects",
     previewType: "ml",
     icon: <Award size={24} />
   },
@@ -70,10 +68,105 @@ const PROJECTS_DATA = [
     title: "Saira E-Commerce Expert",
     desc: "A professional e-commerce service portfolio designed to showcase digital business expertise, services, and client-focused solutions.",
     tech: ["Next.js", "React", "TypeScript", "Responsive UI"],
-    github: "https://github.com/mnoumanrasheed",
+    github: "https://github.com/mnoumanrasheed/portfolio-website",
     liveUrl: "https://sairaaashfaq.netlify.app/",
     previewType: "web",
     icon: <Globe size={24} />
+  },
+  {
+    title: "Katko Corporate Website",
+    desc: "A responsive corporate website presenting AI-powered solutions, healthcare technology, lead automation, and digital engineering services.",
+    tech: ["React", "Vite", "GSAP", "Framer Motion"],
+    github: "https://github.com/mnoumanrasheed/katko-website",
+    liveUrl: "https://katko.co.za",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
+    title: "NourDoc AI Healthcare Platform",
+    desc: "A healthcare SaaS platform for ambient clinical intelligence, structured documentation, medical coding support, and enterprise workflows.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    github: "https://github.com/mnoumanrasheed/nour-doc_new_version",
+    liveUrl: "https://nour-doc.com",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
+    title: "NourDoc 2.0 Flutter Application",
+    desc: "A mobile application UI implementation with polished authentication, patient management, consultations, clinical documentation, and navigation flows.",
+    tech: ["Flutter", "Dart", "Modular Architecture"],
+    github: "https://github.com/mnoumanrasheed/nourdoc-2.0-ui",
+    previewType: "app",
+    icon: <Terminal size={24} />
+  },
+  {
+    title: "M3 Hive Corporate Website",
+    desc: "A modern corporate website showcasing AI solutions, product engineering, automation, data analytics, and digital transformation services.",
+    tech: ["React", "TypeScript", "Vite", "GSAP"],
+    github: "https://github.com/mnoumanrasheed/M3hive",
+    liveUrl: "https://m3hive.com",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
+    title: "Noor Herbal Enterprises",
+    desc: "A full-stack e-commerce platform with product management, cart and checkout workflows, secure admin management, and media handling.",
+    tech: ["Next.js", "PostgreSQL", "NextAuth", "Cloudinary"],
+    github: "https://github.com/mnoumanrasheed/noor-herbal-enterprises",
+    previewType: "web",
+    icon: <Database size={24} />
+  },
+  {
+    title: "LeadHive AI Website",
+    desc: "An AI automation platform website for intelligent lead generation, digital automation, engagement tools, and interactive product experiences.",
+    tech: ["React", "Vite", "Tailwind CSS"],
+    github: "https://github.com/mnoumanrasheed/leadhive-ai-web",
+    liveUrl: "https://leadhive-ai-web.vercel.app",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
+    title: "Atif I. Malik Executive Portfolio",
+    desc: "A premium executive portfolio presenting leadership, strategic vision, professional achievements, and entrepreneurial ventures through refined interactions.",
+    tech: ["React", "TypeScript", "Framer Motion", "GSAP"],
+    github: "https://github.com/mnoumanrasheed/portfolio-atif-malik",
+    liveUrl: "https://portfolio-atif-malik.vercel.app",
+    previewType: "web",
+    icon: <Award size={24} />
+  },
+  {
+    title: "Dr. Ebbad Nazir Portfolio",
+    desc: "A premium personal website with cinematic visual elements, interactive animations, refined typography, and a responsive professional presentation.",
+    tech: ["Next.js", "React", "Three.js", "GSAP"],
+    github: "https://github.com/mnoumanrasheed/dr.ebbad-profile",
+    liveUrl: "https://dr-ebbad-profile.vercel.app",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
+    title: "Aaqib Alvi Personal Portfolio",
+    desc: "A responsive personal portfolio that presents professional experience through modern layouts, clear content structure, and interactive UI components.",
+    tech: ["Next.js", "TypeScript", "Framer Motion"],
+    github: "https://github.com/mnoumanrasheed/portfolio-aaqib-alvi",
+    liveUrl: "https://portfolio-aaqib-alvi.vercel.app",
+    previewType: "web",
+    icon: <Globe size={24} />
+  },
+  {
+    title: "Machine Learning Projects Collection",
+    desc: "A collection of practical machine learning projects covering classification, regression, feature engineering, data analysis, and model evaluation.",
+    tech: ["Python", "Machine Learning", "Scikit-learn", "Pandas"],
+    github: "https://github.com/mnoumanrasheed/Machine-Learning-Projects",
+    previewType: "ml",
+    icon: <Award size={24} />
+  },
+  {
+    title: "FastAPI CRUD Application",
+    desc: "A structured FastAPI backend demonstrating product-focused REST endpoints, CRUD operations, routing, schemas, models, and configuration modules.",
+    tech: ["Python", "FastAPI", "REST API"],
+    github: "https://github.com/mnoumanrasheed/fastAPI-curd-operation",
+    previewType: "app",
+    icon: <Database size={24} />
   }
 ];
 
@@ -109,7 +202,8 @@ export default function Projects() {
           hidden: {},
           visible: {
             transition: {
-              staggerChildren: 0.1
+              delayChildren: 0.08,
+              staggerChildren: 0.12
             }
           }
         }}
@@ -119,15 +213,17 @@ export default function Projects() {
             key={index}
             className="glass-panel project-card"
             variants={{
-              hidden: { opacity: 0, y: 50, scale: 0.95 },
-              visible: { opacity: 1, y: 0, scale: 1 }
+              hidden: { opacity: 0, y: 32, scale: 0.97, filter: "blur(8px)" },
+              visible: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
             }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{
-              y: -8,
-              scale: 1.02,
-              boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)"
+              y: -10,
+              scale: 1.015,
+              boxShadow: "0 24px 48px -18px rgba(59, 130, 246, 0.28)",
+              transition: { type: "spring", stiffness: 360, damping: 24 }
             }}
+            whileTap={{ scale: 0.99 }}
           >
             <div className="project-icon">
               {project.icon}
@@ -154,19 +250,6 @@ export default function Projects() {
                 <GithubIcon style={{ width: 16, height: 16 }} />
                 <span>GitHub Code</span>
               </a>
-
-              {project.kaggle && (
-                <a
-                  href={project.kaggle}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                  title="View on Kaggle"
-                >
-                  <ExternalLink size={16} />
-                  <span>Kaggle Notebook</span>
-                </a>
-              )}
 
               {project.liveUrl && (
                 <a
