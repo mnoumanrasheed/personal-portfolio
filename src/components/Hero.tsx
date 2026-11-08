@@ -270,10 +270,11 @@ export default function Hero() {
                   fill
                   priority
                   className="profile-img-professional"
-                  sizes="(max-width: 768px) 260px, 340px"
+                  sizes="(max-width: 576px) calc(100vw - 4rem), (max-width: 992px) 290px, 350px"
                   style={{
-                    objectFit: 'cover',
-                    objectPosition: '50% 18%'
+                    objectFit: 'contain',
+                    objectPosition: 'center',
+                    padding: '6px'
                   }}
                 />
                 <div className="profile-img-overlay" />
